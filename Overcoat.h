@@ -5,6 +5,11 @@
 #include <iostream>
 
 class Overcoat {
+    std::string name_;
+    std::string type_;
+    std::string size_;
+    double price_;
+
 public:
     Overcoat();
     Overcoat(const std::string& name, const std::string& type, const std::string& size, double price);
@@ -35,15 +40,10 @@ public:
     Overcoat& operator--();    // Prefix decrement
     Overcoat operator--(int);  // Postfix decrement
 
-    // Input/output operators
     friend std::ostream& operator<<(std::ostream& os, const Overcoat& overcoat);
     friend std::istream& operator>>(std::istream& is, Overcoat& overcoat);
 
-private:
-    std::string name_;
-    std::string type_;
-    std::string size_;
-    double price_;
+
 };
 
-#endif // OVERCOAT_H
+#endif
